@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador ICA - Colegio Laura Herrera de Varela IED</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logos">
+      <img src="img/logo-sed.png" alt="Logo SED Bogotá">
+      <img src="img/escudo-bogota.png" alt="Escudo de Bogotá">
+      <img src="img/escudo-colegio.png" alt="Escudo Colegio Laura Herrera de Varela">
+    </div>
+    <h1>Colegio Laura Herrera de Varela IED - SED Bogotá</h1>
+    <h2>Olimpiadas STEM 2025 - Minimonitor de Calidad del Aire</h2>
+    <h3>ICA Modelo Reducido | ICA Regresión Completa Estimada</h3>
+  </header>
+
+  <main>
+    <div class="simulador">
+      <h3>Simulador del Índice de Calidad del Aire (ICA)</h3>
+      <label>PM₂.₅: <input type="range" id="pm25" min="0" max="200" value="35" oninput="actualizarValor('pm25')">
+      <span id="valpm25">35</span></label><br>
+      <label>PM₁₀: <input type="range" id="pm10" min="0" max="300" value="70" oninput="actualizarValor('pm10')">
+      <span id="valpm10">70</span></label><br>
+      <button onclick="calcularICA()">Calcular ICA</button>
+      <div id="resultado">
+        <p id="valorICA">ICA: --</p>
+        <p id="estadoICA">Estado: --</p>
+        <p id="recomendaciones"></p>
+      </div>
+      <hr>
+      <h3>Prueba de consistencia (5 escenarios)</h3>
+      <table id="tablaEscenarios">
+        <thead><tr><th>#</th><th>PM₂.₅</th><th>PM₁₀</th><th>ICA</th><th>Estado</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
