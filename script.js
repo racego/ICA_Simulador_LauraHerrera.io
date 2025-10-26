@@ -8,7 +8,7 @@ function evaluarICA(I){if(I<=50)return{estado:'Buena',color:'#00e400',rec:'Sin r
 if(I<=100)return{estado:'Aceptable',color:'#ffff00',rec:'Evite exposición prolongada.'};
 if(I<=150)return{estado:'Dañina sensibles',color:'#ff7e00',rec:'Evite ejercicio al aire libre.'};
 if(I<=200)return{estado:'Dañina',color:'#ff0000',rec:'Riesgo general.'};
-if(I<=300)return{estado:'Muy dañina',color:'#8f3f97',rec:'Permanezca en interiores.'};
+if(I<=300)return{estado:'Muy dañina',color:'#8f3f97',rec:'Permanezca en su casa.'};
 return{estado:'Peligrosa',color:'#7e0023',rec:'Emergencia sanitaria.'};}
 function generarEscenarios(){const tb=document.querySelector('#tablaEscenarios tbody');tb.innerHTML='';for(let i=1;i<=5;i++){const p25=Math.random()*150,p10=Math.random()*150;const C=Math.max(p25,p10);const I=23.52+2.236*C;const r=evaluarICA(I);
 tb.innerHTML+=`<tr style='background:${r.color}33'><td>${i}</td><td>${p25.toFixed(1)}</td><td>${p10.toFixed(1)}</td><td>${I.toFixed(1)}</td><td>${r.estado}</td></tr>`;}}
